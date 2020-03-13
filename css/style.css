@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../picture/rain.png);
+    background-size: 380px;
+}
+
+.face{
+    position: relative;
+    width: 600px;
+    height:650px;
+    border-radius: 50%;
+    background: #ffebd9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* smiling face: when moving the mouse to the background */
+.face::before{
+    content: '';
+    position: absolute;
+    top: 440px;
+    width: 200px;
+    height: 65px;
+    background: #ffaaa5;
+    border-bottom-left-radius: 60%;
+    border-bottom-right-radius: 60%;
+    transition: 0.5s;   
+}
+
+/* when hover the face- he s turning to a worrie face */
+.face:hover::before{
+    top: 440px;
+    width: 200px;
+    height: 15px;
+    background: #ffaaa5;
+    border: 5%;
+}
+.eyes{
+    position: relative;
+    margin-top: 20px;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+
+.eye{
+    width: 180px;
+    height: 90px;
+    background: white;
+    display: inline-block;
+    margin: 40px;
+    border-radius: 50%;
+    position:relative;
+    overflow: hidden;
+}
+
+.blushes{
+    position:absolute;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+
+.blush{
+    width: 75px;
+    height: 35px;
+    background: #ffe3ed;
+    display: inline-flex;
+    border-radius: 50%;
+    position:relative;
+    margin: 110px;
+}
+
+
+.ball{
+    width: 35px;
+    height: 35px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 15px solid #434e52;
+    
+}
+
