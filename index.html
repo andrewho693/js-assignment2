@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8" http-equiv="Content-Type" content="tect/html">
+            <title> EYES MOVE ON MOUSE MOVE</title>
+            <meta name="viewport" content="width=device-width, initial-scale=-1">
+            <link rel="stylesheet" type="text/css" href="css/style.css"/>                  
+        </head>
+        <body>
+            <!--face section contains eyes, blushes and lip-->
+            <div class="face">
+            <!--eyes section contains two eyes and an eye ball-->
+                <div class="eyes">
+                    <div  class="eye">
+                        <div id="eyeball" class="ball"></div>
+                    </div>
+                    <div class="eye">
+                        <div id="eyeball" class="ball"></div>
+                    </div>
+                </div>
+            <!-- This is his blushes-->
+                <div class="blushes">
+                    <div  class="blush"></div>
+                    <div class="blush"></div>
+                </div>
+                </div>
+        </body>
+    </html>
+
+<script>
+    //using getElementById to locate the element that needs to animate
+    //the eyes' moving- follow the mouse
+    //move the eye balls in their parent container along the x-axis according to that percentage - 0%: all the way to the left, 100%: all the way to the right.
+    var ball; 
+    ball = document.getElementById("eyeball");
+    document.onmousemove = function(){
+        var x = event.clientX * 100 / window.innerWidth + "%";
+        var y = event.clientY * 100 / window.innerHeight + "%";
+        for(var i=0;i<2;i++){
+            eyeball[i].style.left = x;
+            eyeball[i].style.top = y;
+            eyeball[i].style.transform = "translate(-"+x+",-"+y+")";
+    //event.clientX: to get the horizontal coordinate of the onmousemove
+    //event.clientX: to get the vertical coordinate of the onmousemove
+    //window.innerWidth: to get the broser width
+    //window.innerHeight: to get the broser height
+        }
+    }
+    //reference: https://www.youtube.com/watch?v=WqgKe3dcXxg by Online Tutorials
+</script>
+    
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+    
+    //Function2: background moving using jQuery, the rain background moving from the top to the bottom
+    $(function(){
+        var move = 0;
+        setInterval(function(){
+    //moving step from 0 to 4
+            move +=4;
+    //setting the derection that the bacground's moving and the speed of the movement
+            $('body').css('background-position-y', move + 'px');
+        },50)
+    }) 
+</script>
+  
